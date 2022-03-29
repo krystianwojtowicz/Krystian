@@ -1,10 +1,18 @@
 * {
-  font-family: "Rubik";
+  font-family: "Rubik", sans-serif;
   font-size: 18px;
 }
 
 .container {
   max-width: 1440px;
+}
+
+p {
+  color: #9194a1;
+}
+
+h1, h2, h5 {
+  color: #252b46;
 }
 
 .open {
@@ -117,12 +125,14 @@ nav .navbar-toggler-icon:focus {
 
 .simple .manager h1 {
   text-align: center;
+  font-weight: 500;
 }
 
 .simple .manager p {
   text-align: center;
   padding-left: 30px;
   padding-right: 30px;
+  font-weight: 400;
 }
 
 .simple .manager .buttons {
@@ -196,12 +206,14 @@ nav .navbar-toggler-icon:focus {
 
 .features h2 {
   text-align: center;
+  font-weight: 500;
 }
 
 .features p {
   max-width: 480px;
   text-align: center;
   margin: auto;
+  font-weight: 400;
 }
 
 .features .buttons {
@@ -242,6 +254,7 @@ nav .navbar-toggler-icon:focus {
 
 .bookmark-in .oneclick .bookmark P {
   max-width: 430px;
+  font-weight: 400;
 }
 
 .bookmark-in .oneclick .bookmark .more {
@@ -283,12 +296,14 @@ nav .navbar-toggler-icon:focus {
 
 .download h1 {
   text-align: center;
+  font-weight: 500;
 }
 
 .download p {
   max-width: 500px;
   margin: auto;
   text-align: center;
+  font-weight: 400;
 }
 
 .browsers {
@@ -325,11 +340,13 @@ nav .navbar-toggler-icon:focus {
 .browsers div h5 {
   margin-top: 10px;
   text-align: center;
+  font-weight: 400;
 }
 
 .browsers div p {
   font-size: 14px;
   text-align: center;
+  font-weight: 400;
 }
 
 .browsers div button {
@@ -339,12 +356,14 @@ nav .navbar-toggler-icon:focus {
   color: white;
   border: none;
   border-radius: 7px;
+  max-height: 29px;
 }
 
 .browsers div button:hover {
   color: #5355df;
   background-color: white;
   border: 2px solid #5355df;
+  white-space: nowrap;
 }
 
 .faq {
@@ -353,12 +372,14 @@ nav .navbar-toggler-icon:focus {
 
 .faq h1 {
   text-align: center;
+  font-weight: 500;
 }
 
 .faq p {
   text-align: center;
   max-width: 500px;
   margin: auto;
+  font-weight: 400;
 }
 
 .faq .more-accordion {
@@ -381,6 +402,7 @@ nav .navbar-toggler-icon:focus {
 
 .faq .accordion .accordion-item.active svg {
   transform: rotate(180deg);
+  cursor: pointer;
 }
 
 .faq .accordion .accordion-item.active svg path {
@@ -414,6 +436,7 @@ nav .navbar-toggler-icon:focus {
   position: absolute;
   right: 1rem;
   top: 26px;
+  cursor: pointer;
 }
 
 .faq .accordion .accordion-item .accordion-item-body {
@@ -442,11 +465,13 @@ nav .navbar-toggler-icon:focus {
 
 .already .join p {
   display: inline-block;
+  font-weight: 400;
 }
 
 .already .join h1 {
   max-width: 500px;
   margin: auto;
+  font-weight: 500;
   padding: 0 10px;
 }
 
@@ -545,6 +570,10 @@ footer {
   color: white;
 }
 
+footer .brand-title {
+  cursor: pointer;
+}
+
 footer .brand-title svg {
   margin: 0 5px;
 }
@@ -593,7 +622,7 @@ footer .footer .navbar-links ul li a {
   padding: 1rem;
 }
 
-footer .footer .navbar-links ul li:hover {
+footer .footer .navbar-links ul li a:hover {
   color: #fa5757;
 }
 

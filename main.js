@@ -145,7 +145,7 @@ const speed = 1000; // The lower the slower
 //         function open(event){
 //             document.querySelector(".popup").style.display = "block";
 //         },
-//         1000
+//         20000
 //     )
 // });
 // document.querySelector(".popup").addEventListener("click", function(){
@@ -154,7 +154,6 @@ const speed = 1000; // The lower the slower
 
 
 // form
-
 
 const form = document.querySelector("form");
 const email = document.getElementById("emaill");
@@ -175,7 +174,7 @@ const emailValue = document.querySelector("[id='emaill']").value.trim();
 	} else if (!isEmail(emailValue)) {
 		setErrorFor(email, "Whoops, make shure it's an email");
 	} else {
-		setSuccessFor(email);
+		return
 	}
 }
 
