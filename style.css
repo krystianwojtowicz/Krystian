@@ -649,7 +649,7 @@ footer .footer .navbar-links ul li a:hover {
     justify-content: center;
   }
   .simple .manager h1, .simple .manager .buttons, .simple .manager p {
-    margin: auto;
+    margin: 10px auto;
   }
   .bookmark h2, .bookmark .buttons-bookmark, .bookmark p {
     margin: auto;
@@ -698,6 +698,19 @@ footer .footer .navbar-links ul li a:hover {
   }
   .browsers div:nth-child(3) {
     margin-top: 10px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .simple .manager h1, .simple .manager p {
+    text-align: center;
+  }
+  .simple .manager .buttons {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .browsers div {
+    margin-top: 20px !important;
   }
 }
 
