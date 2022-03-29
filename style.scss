@@ -83,7 +83,6 @@ nav {
     border: none !important;
   }
 }
-
 .navbar-light .navbar-toggler-icon {
   background-image: url("images/icon-hamburger.svg");
 }
@@ -103,19 +102,30 @@ nav {
     h1 {
       text-align: center;
       font-weight: 500;
+      max-width: 500px;
+      text-align: left;
+      padding-left: 30px;
+      padding-right: 30px;
     }
     p {
       text-align: center;
       padding-left: 30px;
       padding-right: 30px;
       font-weight: 400;
+      max-width: 500px;
+      text-align: left;
     }
     .buttons {
       display: flex;
-      justify-content: space-around;
+      padding-left: 30px;
+      padding-right: 30px;
+      justify-content: start;
+      max-width: 500px;
       .firefox {
         border: 2px solid white;
         box-shadow: 0 4px 2px -2px #9194a1;
+        margin: 10px;
+        white-space: nowrap;
       }
       .firefox:hover {
         border: 2px solid #252b46;
@@ -126,9 +136,11 @@ nav {
         color: #5355df;
       }
       .chrome {
+        white-space: nowrap;
         background-color: #5355df;
         border: 2px solid #5355df;
         color: white;
+        margin: 10px;
       }
       button {
         background-color: white;
@@ -145,6 +157,7 @@ nav {
       z-index: 9;
       svg {
         max-width: 100%;
+        height: auto;
         display: inline-block;
         g {
           g {
@@ -234,6 +247,7 @@ nav {
         z-index: 9;
         svg {
           max-width: 100%;
+          height: auto;
           display: inline-block;
         }
       }
@@ -375,8 +389,6 @@ nav {
         color: #fa5757;
       }
       svg {
-        // content: url(images/icon-arrow.svg);
-        // font-size: 2rem;
         position: absolute;
         right: 1rem;
         top: 26px;
@@ -407,12 +419,14 @@ nav {
     p {
       display: inline-block;
       font-weight: 400;
+      color: white;
     }
     h1 {
       max-width: 500px;
       margin: auto;
       font-weight: 500;
       padding: 0 10px;
+      color: white;
     }
     div {
       text-transform: uppercase;
@@ -550,7 +564,46 @@ footer {
   }
 }
 
+@media (max-width: 990px) {
+  .simple {
+    .position {
+      display: flex;
+      justify-content: center;
+    }
+    .manager {
+      h1, .buttons, p {
+        margin: auto;
+      }
+    }
+  }
+  .bookmark {
+    h2, .buttons-bookmark, p {
+      margin: auto;
+      margin-top: 10px;
+    }
+    h2 {
+      text-align: center;
+    }
+    .buttons-bookmark {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+    }
+  }
+}
+
 @media (max-width: 800px) {
+  // .manager {
+  //   .buttons {
+  //     flex-direction: column;
+  //     align-items: center;
+  //     button {
+  //       max-width: 150px;
+  //       white-space: nowrap;
+  //       margin-top: 10px
+  //     }
+  //   }
+  // }
   footer {
     justify-content: center;
     flex-direction: column;

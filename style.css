@@ -126,6 +126,10 @@ nav .navbar-toggler-icon:focus {
 .simple .manager h1 {
   text-align: center;
   font-weight: 500;
+  max-width: 500px;
+  text-align: left;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 .simple .manager p {
@@ -133,16 +137,23 @@ nav .navbar-toggler-icon:focus {
   padding-left: 30px;
   padding-right: 30px;
   font-weight: 400;
+  max-width: 500px;
+  text-align: left;
 }
 
 .simple .manager .buttons {
   display: flex;
-  justify-content: space-around;
+  padding-left: 30px;
+  padding-right: 30px;
+  justify-content: start;
+  max-width: 500px;
 }
 
 .simple .manager .buttons .firefox {
   border: 2px solid white;
   box-shadow: 0 4px 2px -2px #9194a1;
+  margin: 10px;
+  white-space: nowrap;
 }
 
 .simple .manager .buttons .firefox:hover {
@@ -156,9 +167,11 @@ nav .navbar-toggler-icon:focus {
 }
 
 .simple .manager .buttons .chrome {
+  white-space: nowrap;
   background-color: #5355df;
   border: 2px solid #5355df;
   color: white;
+  margin: 10px;
 }
 
 .simple .manager .buttons button {
@@ -179,6 +192,7 @@ nav .navbar-toggler-icon:focus {
 
 .simple .position a svg {
   max-width: 100%;
+  height: auto;
   display: inline-block;
 }
 
@@ -278,6 +292,7 @@ nav .navbar-toggler-icon:focus {
 
 .bookmark-in .oneclick .position2 a svg {
   max-width: 100%;
+  height: auto;
   display: inline-block;
 }
 
@@ -466,6 +481,7 @@ nav .navbar-toggler-icon:focus {
 .already .join p {
   display: inline-block;
   font-weight: 400;
+  color: white;
 }
 
 .already .join h1 {
@@ -473,6 +489,7 @@ nav .navbar-toggler-icon:focus {
   margin: auto;
   font-weight: 500;
   padding: 0 10px;
+  color: white;
 }
 
 .already .join div {
@@ -624,6 +641,28 @@ footer .footer .navbar-links ul li a {
 
 footer .footer .navbar-links ul li a:hover {
   color: #fa5757;
+}
+
+@media (max-width: 990px) {
+  .simple .position {
+    display: flex;
+    justify-content: center;
+  }
+  .simple .manager h1, .simple .manager .buttons, .simple .manager p {
+    margin: auto;
+  }
+  .bookmark h2, .bookmark .buttons-bookmark, .bookmark p {
+    margin: auto;
+    margin-top: 10px;
+  }
+  .bookmark h2 {
+    text-align: center;
+  }
+  .bookmark .buttons-bookmark {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
 }
 
 @media (max-width: 800px) {
