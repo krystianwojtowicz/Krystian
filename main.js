@@ -39,27 +39,75 @@ btn.onclick = function (){
     }
 }
 
+// const accordionItemHeaders = document.querySelectorAll(".accordion-item-header");
+// // const accordionItems = document.querySelectorAll(".accordion-item");
+
+// accordionItemHeaders.forEach(accordionItemHeader => {
+//   accordionItemHeader.addEventListener("click", event => {
+//     const accordionItem = accordionItemHeader.parentElement;
+//     // Uncomment in case you only want to allow for the display of only one collapsed item at a time!
+    
+//     // const currentlyActiveAccordionItemHeader = document.querySelector(".accordion-item-header.active");
+//     // if(currentlyActiveAccordionItemHeader && currentlyActiveAccordionItemHeader!==accordionItemHeader) {
+//     //   currentlyActiveAccordionItemHeader.classList.toggle("active");
+//     //   currentlyActiveAccordionItemHeader.nextElementSibling.style.maxHeight = 0;
+//     // }
+//     const accordionItemBody = accordionItemHeader.nextElementSibling;
+//     // const accordionItemBody = parentNode.thirdChild
+// if (!accordionItem.classList.contains('active')){
+//   accordionItem.className = "accordion-item active";
+//     accordionItemBody.style.maxHeight = accordionItemBody.scrollHeight + "px";
+// }
+//     else {
+//       accordionItem.className = "accordion-item";
+//       accordionItemBody.style.maxHeight = 0;
+//     } 
+    
+    
+
+//     // const accordionItemBody = accordionItemHeader.nextElementSibling;
+//     // if(accordionItemHeader.classList.contains("active")) {
+//     //   accordionItemBody.style.maxHeight = accordionItemBody.scrollHeight + "px";
+//     // }
+//     // else {
+//     //   accordionItemBody.style.maxHeight = 0;
+//     // }
+    
+//   });
+// });
+
+const accordionItemImgs = document.querySelectorAll(".accordion-item-img");
 const accordionItemHeaders = document.querySelectorAll(".accordion-item-header");
+
+accordionItemImgs.forEach(accordionItemImg => {
+  accordionItemImg.addEventListener("click", event => {
+    const accordionItemHeader = accordionItemImg.nextElementSibling;
+    const accordionItem = accordionItemHeader.parentElement;
+    const accordionItemBody = accordionItemHeader.nextElementSibling;
+if (!accordionItem.classList.contains('active')){
+  accordionItem.className = "accordion-item active";
+    accordionItemBody.style.maxHeight = accordionItemBody.scrollHeight + "px";
+}
+    else {
+      accordionItem.className = "accordion-item";
+      accordionItemBody.style.maxHeight = 0;
+    } 
+    
+  });
+});
 
 accordionItemHeaders.forEach(accordionItemHeader => {
   accordionItemHeader.addEventListener("click", event => {
-    
-    // Uncomment in case you only want to allow for the display of only one collapsed item at a time!
-    
-    // const currentlyActiveAccordionItemHeader = document.querySelector(".accordion-item-header.active");
-    // if(currentlyActiveAccordionItemHeader && currentlyActiveAccordionItemHeader!==accordionItemHeader) {
-    //   currentlyActiveAccordionItemHeader.classList.toggle("active");
-    //   currentlyActiveAccordionItemHeader.nextElementSibling.style.maxHeight = 0;
-    // }
-
-    accordionItemHeader.classList.toggle("active");
+    const accordionItem = accordionItemHeader.parentElement;
     const accordionItemBody = accordionItemHeader.nextElementSibling;
-    if(accordionItemHeader.classList.contains("active")) {
-      accordionItemBody.style.maxHeight = accordionItemBody.scrollHeight + "px";
-    }
+if (!accordionItem.classList.contains('active')){
+  accordionItem.className = "accordion-item active";
+    accordionItemBody.style.maxHeight = accordionItemBody.scrollHeight + "px";
+}
     else {
+      accordionItem.className = "accordion-item";
       accordionItemBody.style.maxHeight = 0;
-    }
+    } 
     
   });
 });
@@ -92,17 +140,17 @@ const speed = 1000; // The lower the slower
 
 
   // popup
-  window.addEventListener("load", function(){
-    setTimeout(
-        function open(event){
-            document.querySelector(".popup").style.display = "block";
-        },
-        20000
-    )
-});
-document.querySelector(".popup").addEventListener("click", function(){
-    document.querySelector(".popup").style.display = "none";
-});
+//   window.addEventListener("load", function(){
+//     setTimeout(
+//         function open(event){
+//             document.querySelector(".popup").style.display = "block";
+//         },
+//         1000
+//     )
+// });
+// document.querySelector(".popup").addEventListener("click", function(){
+//     document.querySelector(".popup").style.display = "none";
+// });
 
 
 // form

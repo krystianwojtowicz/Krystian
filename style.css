@@ -23,6 +23,7 @@ nav img {
   position: absolute;
   top: 0;
   z-index: 11;
+  width: 100%;
 }
 
 nav .fa-times {
@@ -106,6 +107,7 @@ nav .navbar-toggler-icon:focus {
   z-index: 12;
   top: 0;
   display: none;
+  width: 100%;
 }
 
 .simple .manager {
@@ -205,6 +207,7 @@ nav .navbar-toggler-icon:focus {
 .features .buttons {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   margin-top: 50px;
 }
 
@@ -215,7 +218,7 @@ nav .navbar-toggler-icon:focus {
 .features .buttons button {
   background-color: white;
   border-style: none;
-  border-radius: 7px;
+  border-radius: 1px;
   margin: 0 20px;
   white-space: nowrap;
   height: 40px;
@@ -376,49 +379,50 @@ nav .navbar-toggler-icon:focus {
   margin: 2rem auto;
 }
 
-.faq .accordion-item {
+.faq .accordion .accordion-item.active svg {
+  transform: rotate(180deg);
+}
+
+.faq .accordion .accordion-item.active svg path {
+  stroke: #fa5757;
+}
+
+.faq .accordion .accordion-item {
   background-color: #fff;
   color: #111;
   margin: 1rem 0;
   border-radius: 7px;
+  position: relative;
 }
 
-.faq .accordion-item-header {
+.faq .accordion .accordion-item .accordion-item-header {
   padding: 0.5rem 3rem 0.5rem 1rem;
   min-height: 3.5rem;
   line-height: 1.25rem;
   font-weight: bold;
   display: flex;
   align-items: center;
-  position: relative;
   cursor: pointer;
   box-shadow: 0px 2px 2px #9194a1, 0px -2px 2px #9194a1;
 }
 
-.faq .accordion-item-header:hover {
+.faq .accordion .accordion-item .accordion-item-header:hover {
   color: #fa5757;
 }
 
-.faq .accordion-item-header::after {
-  content: url(images/icon-arrow.svg);
-  font-size: 2rem;
+.faq .accordion .accordion-item svg {
   position: absolute;
   right: 1rem;
+  top: 26px;
 }
 
-.faq .accordion-item-header.active::after {
-  content: url(images/icon-arrow.svg);
-  transform: rotate(180deg);
-  color: #fa5757;
-}
-
-.faq .accordion-item-body {
+.faq .accordion .accordion-item .accordion-item-body {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.2s ease-out;
 }
 
-.faq .accordion-item-body-content {
+.faq .accordion .accordion-item .accordion-item-body .accordion-item-body-content {
   padding: 1rem;
   line-height: 1.5rem;
   border-top: 1px solid;
@@ -482,7 +486,7 @@ nav .navbar-toggler-icon:focus {
   color: white;
   background-color: #fa5757;
   border: none;
-  height: 30px;
+  height: 33px;
 }
 
 .already .form form .email.error img {
@@ -541,8 +545,12 @@ footer {
   color: white;
 }
 
-footer .brand-title img {
+footer .brand-title svg {
   margin: 0 5px;
+}
+
+footer .brand-title svg:hover path {
+  fill: #fa5757;
 }
 
 footer .footer {
@@ -562,6 +570,9 @@ footer .footer .brand-title svg g path {
 
 footer .footer .navbar-links {
   height: 100%;
+  min-height: 80px;
+  display: flex;
+  align-items: center;
 }
 
 footer .footer .navbar-links ul {
