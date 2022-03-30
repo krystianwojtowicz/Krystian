@@ -140,17 +140,17 @@ const speed = 1000; // The lower the slower
 
 
   // popup
-//   window.addEventListener("load", function(){
-//     setTimeout(
-//         function open(event){
-//             document.querySelector(".popup").style.display = "block";
-//         },
-//         20000
-//     )
-// });
-// document.querySelector(".popup").addEventListener("click", function(){
-//     document.querySelector(".popup").style.display = "none";
-// });
+  window.addEventListener("load", function(){
+    setTimeout(
+        function open(event){
+            document.querySelector(".popup").style.display = "block";
+        },
+        20000
+    )
+});
+document.querySelector(".popup").addEventListener("click", function(){
+    document.querySelector(".popup").style.display = "none";
+});
 
 
 // form

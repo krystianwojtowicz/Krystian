@@ -8,7 +8,9 @@
 p {
   color: #9194a1;
 }
-h1, h2, h5 {
+h1,
+h2,
+h5 {
   color: #252b46;
 }
 .open {
@@ -24,7 +26,7 @@ nav {
     position: absolute;
     top: 0;
     z-index: 11;
-    width:100%;
+    width: 100%;
   }
   .fa-times {
     color: white !important;
@@ -38,13 +40,14 @@ nav {
   .navbar-center .open2 {
     fill: #252b46;
   }
+  ul li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
   ul li .open-link {
     color: white !important;
-    border-top: 1px solid #9194a1;
     margin-bottom: 5px;
-  }
-  ul li .menu-contact {
-    border-bottom: 1px solid #9194a1;
   }
 
   ul li:last-child .to-remove {
@@ -54,16 +57,15 @@ nav {
   }
   ul li:last-child .login {
     color: white !important;
-    border-top: 1px solid #9194a1;
     background-color: #252b46;
-    border: 1px solid white;
     border-radius: 7px;
   }
   ul li .nav-link3:hover {
     color: #fa5757 !important;
   }
-  ul li:last-child .nav-link {
+  ul li:last-child {
     border: 3px solid #fa5757;
+    border-radius: 7px;
   }
   ul li:last-child .nav-link:hover {
     background-color: white;
@@ -155,6 +157,7 @@ nav {
     a {
       position: absolute;
       z-index: 9;
+      max-width: 80%;
       svg {
         max-width: 100%;
         height: auto;
@@ -174,7 +177,7 @@ nav {
       top: 150px;
       left: 20%;
       width: 70%;
-      height: 70%;
+      height: 15vw;
       background: #5355df;
       display: inline-block;
       line-height: 250px;
@@ -245,6 +248,7 @@ nav {
       a {
         position: absolute;
         z-index: 9;
+        max-width: 80%;
         svg {
           max-width: 100%;
           height: auto;
@@ -257,7 +261,7 @@ nav {
         top: 150px;
         right: 20%;
         width: 85%;
-        height: 70%;
+        height: 15vw;
         background: #5355df;
         display: inline-block;
         line-height: 250px;
@@ -359,7 +363,7 @@ nav {
     width: 90%;
     max-width: 600px;
     margin: 2rem auto;
-    .accordion-item.active svg{
+    .accordion-item.active svg {
       transform: rotate(180deg);
       cursor: pointer;
       path {
@@ -372,8 +376,7 @@ nav {
       margin: 1rem 0;
       border-radius: 7px;
       position: relative;
-      
-      
+
       .accordion-item-header {
         padding: 0.5rem 3rem 0.5rem 1rem;
         min-height: 3.5rem;
@@ -381,7 +384,7 @@ nav {
         font-weight: bold;
         display: flex;
         align-items: center;
-        
+
         cursor: pointer;
         box-shadow: 0px 2px 2px #9194a1, 0px -2px 2px #9194a1;
       }
@@ -402,7 +405,13 @@ nav {
           padding: 1rem;
           line-height: 1.5rem;
           border-top: 1px solid;
-          border-image: linear-gradient(to right, transparent, #252b46, transparent) 1;
+          border-image: linear-gradient(
+              to right,
+              transparent,
+              #252b46,
+              transparent
+            )
+            1;
         }
       }
     }
@@ -517,7 +526,7 @@ footer {
     }
     svg:hover {
       path {
-        fill: #fa5757
+        fill: #fa5757;
       }
     }
   }
@@ -540,7 +549,7 @@ footer {
       height: 100%;
       min-height: 80px;
       display: flex;
-        align-items: center;
+      align-items: center;
       ul {
         display: flex;
         margin: 0;
@@ -558,7 +567,6 @@ footer {
             color: #fa5757;
           }
         }
-        
       }
     }
   }
@@ -569,25 +577,65 @@ footer {
     .position {
       display: flex;
       justify-content: center;
+      a {
+        max-width: 60%;
+      }
+      .oval {
+        position: absolute;
+        z-index: 8;
+        top: 150px;
+        left: 35%;
+        width: 50%;
+        height: 25vw;
+        background: #5355df;
+        display: inline-block;
+        line-height: 250px;
+        border-radius: 250px 0 0 250px;
+      }
     }
     .manager {
-      h1, .buttons, p {
+      h1,
+      .buttons,
+      p {
         margin: 10px auto;
       }
     }
   }
-  .bookmark {
-    h2, .buttons-bookmark, p {
-      margin: auto;
-      margin-top: 10px;
+  .bookmark-in {
+    .oneclick {
+      .position2 {
+        a {
+          max-width: 60%;
+        }
+        .oval2 {
+          position: absolute;
+          z-index: 8;
+          top: 150px;
+          right: 35%;
+          width: 55%;
+          height: 25vw;
+          background: #5355df;
+          display: inline-block;
+          line-height: 250px;
+          border-radius: 0 250px 250px 0;
+        }
+      }
     }
-    h2 {
-      text-align: center;
-    }
-    .buttons-bookmark {
-      display: flex;
-      justify-content: center;
-      margin-top: 10px;
+    .bookmark {
+      h2,
+      .buttons-bookmark,
+      p {
+        margin: auto;
+        margin-top: 10px;
+      }
+      h2 {
+        text-align: center;
+      }
+      .buttons-bookmark {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+      }
     }
   }
 }
@@ -629,9 +677,16 @@ footer {
 }
 
 @media screen and (max-width: 576px) {
+  nav {
+    li {
+      display: list-item;
+      border-top: 1px solid #9194a1;
+    }
+  }
   .simple {
     .manager {
-      h1, p {
+      h1,
+      p {
         text-align: center;
       }
       .buttons {
@@ -643,6 +698,22 @@ footer {
   .browsers {
     div {
       margin-top: 20px !important;
+    }
+  }
+  .simple {
+    .position {
+      .oval {
+        top: 100px;
+      }
+    }
+  }
+  .bookmark-in {
+    .oneclick {
+      .position2 {
+        .oval2 {
+          top: 100px;
+        }
+      }
     }
   }
 }
