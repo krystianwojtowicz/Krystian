@@ -26,7 +26,7 @@ nav {
     position: absolute;
     top: 0;
     z-index: 11;
-    width: 100%;
+    width: 50%;
   }
   .fa-times {
     color: white !important;
@@ -96,7 +96,7 @@ nav {
     z-index: 12;
     top: 0;
     display: none;
-    width: 100%;
+    width: 50%;
   }
   .manager {
     padding-top: 50px;
@@ -573,7 +573,15 @@ footer {
 }
 
 @media (max-width: 990px) {
+  nav {
+    img {
+      width: 100%;
+    }
+  }
   .simple {
+    img {
+      width: 100%;
+    }
     .position {
       display: flex;
       justify-content: center;

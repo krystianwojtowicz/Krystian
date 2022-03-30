@@ -33,7 +33,7 @@ nav img {
   position: absolute;
   top: 0;
   z-index: 11;
-  width: 100%;
+  width: 50%;
 }
 
 nav .fa-times {
@@ -117,7 +117,7 @@ nav .navbar-toggler-icon:focus {
   z-index: 12;
   top: 0;
   display: none;
-  width: 100%;
+  width: 50%;
 }
 
 .simple .manager {
@@ -648,6 +648,12 @@ footer .footer .navbar-links ul li a:hover {
 }
 
 @media (max-width: 990px) {
+  nav img {
+    width: 100%;
+  }
+  .simple img {
+    width: 100%;
+  }
   .simple .position {
     display: flex;
     justify-content: center;
