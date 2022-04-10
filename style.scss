@@ -13,95 +13,89 @@ h2,
 h5 {
   color: #252b46;
 }
-.open {
-  background-color: #252b46;
+
+.bookmark * {
+  margin: 0;
   padding: 0;
-  color: white !important;
-}
-nav {
-  text-transform: uppercase;
-  position: relative;
-  img {
-    visibility: hidden;
-    position: absolute;
-    top: 0;
-    z-index: 11;
-    width: 50%;
-  }
-  .fa-times {
-    color: white !important;
-  }
-  .navbar-center:hover img {
-    visibility: visible;
-  }
-  .navbar-center .open-logo {
-    fill: white;
-  }
-  .navbar-center .open2 {
-    fill: #252b46;
-  }
-  ul li {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  ul li .open-link {
-    color: white !important;
-    margin-bottom: 5px;
-  }
-
-  ul li:last-child .to-remove {
-    background-color: #fa5757;
-    border-radius: 7px;
-    color: white !important;
-  }
-  ul li:last-child .login {
-    color: white !important;
-    background-color: #252b46;
-    border-radius: 7px;
-  }
-  ul li .nav-link3:hover {
-    color: #fa5757 !important;
-  }
-  ul li:last-child {
-    border: 3px solid #fa5757;
-    border-radius: 7px;
-  }
-  ul li:last-child .nav-link:hover {
-    background-color: white;
-    color: #fa5757 !important;
-    border: 3px solid #fa5757;
-  }
-  a {
-    font-weight: bold;
-    text-align: center;
-  }
-  .navbar-toggler,
-  .navbar-toggler:focus,
-  .navbar-toggler:active,
-  .navbar-toggler-icon:focus {
-    outline: none !important;
-    box-shadow: none !important;
-    border: none !important;
-  }
-}
-.navbar-light .navbar-toggler-icon {
-  background-image: url("images/icon-hamburger.svg");
+  box-sizing: border-box;
 }
 
-.simple {
-  margin-bottom: 70px;
-  img {
+.bookmark {
+  display: flex;
+  height: 80px;
+  max-width: 1440px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 200px 0 100px;
+  flex-wrap: wrap;
+  margin: auto;
+  .simple__img--hover {
     position: fixed;
     z-index: 12;
     top: 0;
     display: none;
     width: 50%;
   }
-  .manager {
+  a:hover .simple__img--hover {
+    display: block;
+  }
+  .bookmark__ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    .bookmark__li {
+      margin: 0 5px;
+      padding: 10px 0;
+      .bookmark__a {
+        text-transform: uppercase;
+        color: #252b46;
+        text-decoration: none;
+        font-size: 18px;
+        font-weight: 500;
+        padding: 8px 15px;
+        border-radius: 5px;
+        letter-spacing: 1px;
+        transition: all 0.3s ease;
+      }
+      .bookmark__a.active,
+      .bookmark__a:hover {
+        color: #fa5757;
+        text-decoration: none;
+      }
+    }
+    li:last-child .bookmark__a {
+      border: 3px solid #fa5757;
+      background-color: #fa5757;
+      color: white;
+    }
+    .bookmark__li:last-child .bookmark__a.active,
+    .bookmark__li:last-child .bookmark__a:hover {
+      background-color: white;
+    }
+  }
+  .bookmark__input {
+    display: none;
+  }
+  .bookmark__label img {
+    cursor: pointer;
+    display: none;
+  }
+}
+
+.simple__row {
+  margin-bottom: 70px;
+  .simple__img {
+    position: fixed;
+    z-index: 12;
+    top: 0;
+    display: none;
+    width: 50%;
+  }
+  .simple__text {
     padding-top: 50px;
     margin-bottom: 50px;
-    h1 {
+    .simple__h1,
+    .simple__h2 {
       text-align: center;
       font-weight: 500;
       max-width: 500px;
@@ -109,7 +103,7 @@ nav {
       padding-left: 30px;
       padding-right: 30px;
     }
-    p {
+    .simple__p {
       text-align: center;
       padding-left: 30px;
       padding-right: 30px;
@@ -117,27 +111,27 @@ nav {
       max-width: 500px;
       text-align: left;
     }
-    .buttons {
+    .simple__buttons {
       display: flex;
       padding-left: 30px;
       padding-right: 30px;
       justify-content: start;
       max-width: 500px;
-      .firefox {
+      .simple__firefox {
         border: 2px solid white;
         box-shadow: 0 4px 2px -2px #9194a1;
         margin: 10px;
         white-space: nowrap;
       }
-      .firefox:hover {
+      .simple__firefox:hover {
         border: 2px solid #252b46;
       }
-      .chrome:hover {
+      .simple__chrome:hover {
         border: 2px solid #5355df;
         background-color: white;
         color: #5355df;
       }
-      .chrome {
+      .simple__chrome {
         white-space: nowrap;
         background-color: #5355df;
         border: 2px solid #5355df;
@@ -151,14 +145,23 @@ nav {
       }
     }
   }
-  .position {
+  .simple__position--center {
+    display: flex;
+    justify-content: center;
+  }
+  .simple__position {
     min-height: 350px;
     position: relative;
     a {
       position: absolute;
       z-index: 9;
       max-width: 80%;
-      svg {
+      .simple__svg--color {
+        max-width: 100%;
+        height: auto;
+        display: inline-block;
+      }
+      .simple__svg {
         max-width: 100%;
         height: auto;
         display: inline-block;
@@ -171,7 +174,7 @@ nav {
         }
       }
     }
-    .oval {
+    .simple__oval {
       position: absolute;
       z-index: 8;
       top: 150px;
@@ -183,31 +186,47 @@ nav {
       line-height: 250px;
       border-radius: 250px 0 0 250px;
     }
+    .simple__oval--side {
+      position: absolute;
+      z-index: 8;
+      top: 150px;
+      right: 20%;
+      width: 85%;
+      height: 15vw;
+      background: #5355df;
+      display: inline-block;
+      line-height: 250px;
+      border-radius: 0 250px 250px 0;
+    }
   }
 }
 
 .features {
   margin-top: 20px;
   margin-bottom: 50px;
-  h2 {
+  .features__h1 {
     text-align: center;
     font-weight: 500;
   }
-  p {
+  .features__h2 {
+    text-align: center;
+    font-weight: 500;
+  }
+  .features__p {
     max-width: 480px;
     text-align: center;
     margin: auto;
     font-weight: 400;
   }
-  .buttons {
+  .features__buttons {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     margin-top: 50px;
-    div {
+    .features__button {
       border-bottom: 1px solid #9194a1;
     }
-    button {
+    .features__btn {
       background-color: white;
       border-style: none;
       border-radius: 1px;
@@ -224,77 +243,17 @@ nav {
   }
 }
 
-.bookmark-in {
-  margin-bottom: 70px;
-  .oneclick {
-    .bookmark {
-      padding: 50px 15px 0;
-      P {
-        max-width: 430px;
-        font-weight: 400;
-      }
-      .more {
-        background-color: #5355df;
-        color: white;
-        border-radius: 7px;
-        border: none;
-      }
-    }
-    .position2 {
-      min-height: 350px;
-      position: relative;
-      display: flex;
-      justify-content: center;
-      a {
-        position: absolute;
-        z-index: 9;
-        max-width: 80%;
-        svg {
-          max-width: 100%;
-          height: auto;
-          display: inline-block;
-        }
-      }
-      .oval2 {
-        position: absolute;
-        z-index: 8;
-        top: 150px;
-        right: 20%;
-        width: 85%;
-        height: 15vw;
-        background: #5355df;
-        display: inline-block;
-        line-height: 250px;
-        border-radius: 0 250px 250px 0;
-      }
-    }
-  }
-}
-
-.download {
-  h1 {
-    text-align: center;
-    font-weight: 500;
-  }
-  p {
-    max-width: 500px;
-    margin: auto;
-    text-align: center;
-    font-weight: 400;
-  }
-}
-
 .browsers {
   margin-top: 50px;
   display: flex;
   justify-content: center;
-  div:nth-child(2) {
+  .browsers__div:nth-child(2) {
     margin-top: 50px;
   }
-  div:nth-child(3) {
+  .browsers__div:nth-child(3) {
     margin-top: 100px;
   }
-  div {
+  .browsers__div {
     padding-top: 10px;
     max-width: 200px;
     overflow: hidden;
@@ -304,21 +263,21 @@ nav {
     box-shadow: 0px 2px 3px #9194a1, -3px 2px 4px #9194a1, 3px 2px 4px #9194a1;
     margin-bottom: 10px;
     height: 250px;
-    img {
+    .browsers__img {
       display: block;
       margin: auto;
     }
-    h5 {
+    .browsers__h5 {
       margin-top: 10px;
       text-align: center;
       font-weight: 400;
     }
-    p {
+    .browsers__p {
       font-size: 14px;
       text-align: center;
       font-weight: 400;
     }
-    button {
+    .browsers__btn {
       margin-top: 10px;
       margin-bottom: 10px;
       background-color: #5355df;
@@ -327,30 +286,24 @@ nav {
       border-radius: 7px;
       max-height: 29px;
     }
-    button:hover {
+    .browsers__btn:hover {
       color: #5355df;
       background-color: white;
       border: 2px solid #5355df;
       white-space: nowrap;
     }
+    .browsers__dots {
+      display: block;
+      margin: auto;
+    }
   }
 }
 
-.faq {
+.accordion {
   margin-top: 50px;
-  h1 {
+  .accordion__more {
     text-align: center;
-    font-weight: 500;
-  }
-  p {
-    text-align: center;
-    max-width: 500px;
-    margin: auto;
-    font-weight: 400;
-  }
-  .more-accordion {
-    text-align: center;
-    .more {
+    .accordion__more-btn {
       background-color: #5355df;
       color: white;
       border-radius: 7px;
@@ -359,25 +312,25 @@ nav {
     }
   }
 
-  .accordion {
+  .accordion__div {
     width: 90%;
     max-width: 600px;
     margin: 2rem auto;
-    .accordion-item.active svg {
+    .accordion__item.active svg {
       transform: rotate(180deg);
       cursor: pointer;
       path {
         stroke: #fa5757;
       }
     }
-    .accordion-item {
+    .accordion__item {
       background-color: #fff;
       color: #111;
       margin: 1rem 0;
       border-radius: 7px;
       position: relative;
 
-      .accordion-item-header {
+      .accordion__item-header {
         padding: 0.5rem 3rem 0.5rem 1rem;
         min-height: 3.5rem;
         line-height: 1.25rem;
@@ -388,7 +341,7 @@ nav {
         cursor: pointer;
         box-shadow: 0px 2px 2px #9194a1, 0px -2px 2px #9194a1;
       }
-      .accordion-item-header:hover {
+      .accordion__item-header:hover {
         color: #fa5757;
       }
       svg {
@@ -397,11 +350,11 @@ nav {
         top: 26px;
         cursor: pointer;
       }
-      .accordion-item-body {
+      .accordion__item-body {
         max-height: 0;
         overflow: hidden;
         transition: max-height 0.2s ease-out;
-        .accordion-item-body-content {
+        .accordion__item-body-content {
           padding: 1rem;
           line-height: 1.5rem;
           border-top: 1px solid;
@@ -423,7 +376,7 @@ nav {
   padding: 50px 0 0;
   background-color: #5355df;
   color: white;
-  .join {
+  .already__join {
     text-align: center;
     p {
       display: inline-block;
@@ -441,11 +394,11 @@ nav {
       text-transform: uppercase;
     }
   }
-  .form {
+  .already__form {
     display: flex;
     justify-content: center;
     margin: 30px;
-    form.submit-error .submit input {
+    form.submit-error .already__submit input {
       color: #fa5757;
       border: 2px solid #fa5757;
       background-color: #fff;
@@ -455,7 +408,7 @@ nav {
       justify-content: center;
       max-width: 600px;
       width: 100%;
-      .submit {
+      .already__submit {
         width: 35%;
         display: inline-block;
         vertical-align: top;
@@ -469,13 +422,13 @@ nav {
           height: 33px;
         }
       }
-      .email.error img {
+      .already__email.error img {
         visibility: visible;
       }
-      .email.error input {
+      .already__email.error input {
         border: 2px solid #fa5757;
       }
-      .email {
+      .already__email {
         width: 55%;
         display: inline-block;
         position: relative;
@@ -500,7 +453,7 @@ nav {
           color: white;
           width: 100%;
         }
-        img {
+        .already__img {
           position: absolute;
           top: 5px;
           right: 10px;
@@ -519,7 +472,7 @@ footer {
   align-items: center;
   background-color: #252b46;
   color: white;
-  .brand-title {
+  .already__brand-title {
     cursor: pointer;
     svg {
       margin: 0 5px;
@@ -530,10 +483,10 @@ footer {
       }
     }
   }
-  .footer {
+  .already__footer {
     display: flex;
     min-height: 80px;
-    .brand-title {
+    .already__brand-title {
       margin-right: 10px;
       display: flex;
       align-items: center;
@@ -545,30 +498,36 @@ footer {
         }
       }
     }
-    .navbar-links {
+    .already__navbar-links {
       height: 100%;
       min-height: 80px;
       display: flex;
       align-items: center;
-      ul {
+      .already__ul {
         display: flex;
         margin: 0;
         padding: 0;
-        li {
+        .already__li {
           list-style: none;
           text-transform: uppercase;
-          a {
+          .already__a {
             display: block;
             text-decoration: none;
             color: white;
             padding: 1rem;
           }
-          a:hover {
+          .already__a:hover {
             color: #fa5757;
           }
         }
       }
     }
+  }
+}
+
+@media (max-width: 1000px) {
+  .bookmark {
+    padding: 0 40px 0 50px;
   }
 }
 
@@ -578,72 +537,107 @@ footer {
       width: 100%;
     }
   }
-  .simple {
-    img {
+  .simple__row {
+    .simple__img {
       width: 100%;
     }
-    .position {
+    .simple__position {
       display: flex;
       justify-content: center;
       a {
         max-width: 60%;
       }
-      .oval {
-        position: absolute;
-        z-index: 8;
-        top: 150px;
+      .simple__oval {
         left: 35%;
         width: 50%;
         height: 25vw;
-        background: #5355df;
-        display: inline-block;
-        line-height: 250px;
-        border-radius: 250px 0 0 250px;
+      }
+      .simple__oval--side {
+        right: 35%;
+        width: 55%;
+        height: 25vw;
       }
     }
-    .manager {
-      h1,
-      .buttons,
-      p {
+    .simple__text {
+      .simple__h1,
+      .simple__h2,
+      .simple__buttons,
+      .simple__p {
         margin: 10px auto;
       }
     }
   }
-  .bookmark-in {
-    .oneclick {
-      .position2 {
-        a {
-          max-width: 60%;
+
+  .bookmark {
+    h2,
+    .buttons-bookmark,
+    p {
+      margin: auto;
+      margin-top: 10px;
+    }
+    h2 {
+      text-align: center;
+    }
+    .buttons-bookmark {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+    }
+  }
+}
+
+@media (max-width: 920px) {
+  .bookmark.active {
+    background-color: #252b46;
+    svg g path {
+      fill: white;
+    }
+    svg g g circle {
+      fill: white;
+    }
+    svg g g path {
+      fill: #252b46;
+    }
+    .bookmark__img {
+      content: url(images/icon-close.svg);
+    }
+  }
+  .bookmark {
+    .bookmark__ul {
+      position: fixed;
+      top: 80px;
+      left: -100%;
+      background: #252b46;
+      height: 100vh;
+      width: 100%;
+      text-align: center;
+      display: block;
+      transition: all 0.3s ease;
+      z-index: 20;
+      .bookmark__li {
+        width: 90%;
+        border-top: 1px solid #9194a1;
+        margin: 0 auto;
+        .bookmark__a {
+          color: white;
+          width: 100%;
+          margin-left: -100%;
+          display: block;
+          font-size: 20px;
+          transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+          margin: 0 auto;
         }
-        .oval2 {
-          position: absolute;
-          z-index: 8;
-          top: 150px;
-          right: 35%;
-          width: 55%;
-          height: 25vw;
-          background: #5355df;
-          display: inline-block;
-          line-height: 250px;
-          border-radius: 0 250px 250px 0;
-        }
+      }
+      .bookmark__li:last-child .bookmark__a {
+        border: 3px solid white;
+        background-color: #252b46;
       }
     }
-    .bookmark {
-      h2,
-      .buttons-bookmark,
-      p {
-        margin: auto;
-        margin-top: 10px;
-      }
-      h2 {
-        text-align: center;
-      }
-      .buttons-bookmark {
-        display: flex;
-        justify-content: center;
-        margin-top: 10px;
-      }
+    #click:checked ~ .bookmark__ul {
+      left: 0;
+    }
+    .bookmark__label img {
+      display: block;
     }
   }
 }
@@ -652,19 +646,19 @@ footer {
   footer {
     justify-content: center;
     flex-direction: column;
-    .brand-title {
+    .already__brand-title {
       margin: 20px 0;
     }
-    .footer {
+    .already__footer {
       flex-direction: column;
-      .navbar-links {
+      .already__navbar-links {
         display: flex;
-        ul {
+        .already__ul {
           width: 100%;
           flex-direction: column;
-          li {
+          .already__li {
             text-align: center;
-            a {
+            .already__a {
               padding: 0.5rem 1rem;
             }
           }
@@ -678,7 +672,7 @@ footer {
   .browsers {
     display: flex;
     flex-wrap: wrap;
-    div:nth-child(3) {
+    .browsers__div:nth-child(3) {
       margin-top: 10px;
     }
   }
@@ -691,73 +685,67 @@ footer {
       border-top: 1px solid #9194a1;
     }
   }
-  .simple {
-    .manager {
-      h1,
-      p {
+  .simple__row {
+    .simple__text {
+      .simple__h1,
+      .simple__p {
         text-align: center;
       }
-      .buttons {
-        padding-left: 10px;
-        padding-right: 10px;
+      .simple__buttons {
+        display: flex;
+        justify-content: center;
       }
     }
   }
   .browsers {
-    div {
+    .browsers__div {
       margin-top: 20px !important;
     }
   }
-  .simple {
-    .position {
-      .oval {
+  .simple__row {
+    .simple__position {
+      .simple__oval {
         top: 100px;
       }
-    }
-  }
-  .bookmark-in {
-    .oneclick {
-      .position2 {
-        .oval2 {
-          top: 100px;
-        }
+      .simple__oval--side {
+        top: 100px;
       }
     }
   }
 }
 
 @media screen and (max-width: 375px) {
-  .simple {
+  .simple__row {
     display: flex;
     flex-direction: column-reverse;
   }
   .features {
-    .buttons {
+    .features__buttons {
       display: flex;
       flex-direction: column;
-      div {
+      .features__button {
         display: flex;
         justify-content: center;
       }
-      div:first-child {
+      .features__button:first-child {
         border-top: 1px solid #9194a1;
       }
     }
   }
   .browsers {
     flex-direction: column;
-    div {
+    .browsers__div {
       margin: auto;
     }
-    div:nth-child(2) {
+    .browsers__div:nth-child(2) {
       margin-top: 10px;
     }
-    div:nth-child(3) {
+    .browsers__div:nth-child(3) {
       margin-top: 10px;
     }
   }
   .already {
-    .form {
+    .already__form {
       flex-direction: column;
       input {
         width: 80%;

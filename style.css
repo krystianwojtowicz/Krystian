@@ -17,102 +17,24 @@ h5 {
   color: #252b46;
 }
 
-.open {
-  background-color: #252b46;
+.bookmark * {
+  margin: 0;
   padding: 0;
-  color: white !important;
+  box-sizing: border-box;
 }
 
-nav {
-  text-transform: uppercase;
-  position: relative;
-}
-
-nav img {
-  visibility: hidden;
-  position: absolute;
-  top: 0;
-  z-index: 11;
-  width: 50%;
-}
-
-nav .fa-times {
-  color: white !important;
-}
-
-nav .navbar-center:hover img {
-  visibility: visible;
-}
-
-nav .navbar-center .open-logo {
-  fill: white;
-}
-
-nav .navbar-center .open2 {
-  fill: #252b46;
-}
-
-nav ul li {
+.bookmark {
   display: flex;
+  height: 80px;
+  max-width: 1440px;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  padding: 0 200px 0 100px;
+  flex-wrap: wrap;
+  margin: auto;
 }
 
-nav ul li .open-link {
-  color: white !important;
-  margin-bottom: 5px;
-}
-
-nav ul li:last-child .to-remove {
-  background-color: #fa5757;
-  border-radius: 7px;
-  color: white !important;
-}
-
-nav ul li:last-child .login {
-  color: white !important;
-  background-color: #252b46;
-  border-radius: 7px;
-}
-
-nav ul li .nav-link3:hover {
-  color: #fa5757 !important;
-}
-
-nav ul li:last-child {
-  border: 3px solid #fa5757;
-  border-radius: 7px;
-}
-
-nav ul li:last-child .nav-link:hover {
-  background-color: white;
-  color: #fa5757 !important;
-  border: 3px solid #fa5757;
-}
-
-nav a {
-  font-weight: bold;
-  text-align: center;
-}
-
-nav .navbar-toggler,
-nav .navbar-toggler:focus,
-nav .navbar-toggler:active,
-nav .navbar-toggler-icon:focus {
-  outline: none !important;
-  box-shadow: none !important;
-  border: none !important;
-}
-
-.navbar-light .navbar-toggler-icon {
-  background-image: url("images/icon-hamburger.svg");
-}
-
-.simple {
-  margin-bottom: 70px;
-}
-
-.simple img {
+.bookmark .simple__img--hover {
   position: fixed;
   z-index: 12;
   top: 0;
@@ -120,12 +42,78 @@ nav .navbar-toggler-icon:focus {
   width: 50%;
 }
 
-.simple .manager {
+.bookmark a:hover .simple__img--hover {
+  display: block;
+}
+
+.bookmark .bookmark__ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+.bookmark .bookmark__ul .bookmark__li {
+  margin: 0 5px;
+  padding: 10px 0;
+}
+
+.bookmark .bookmark__ul .bookmark__li .bookmark__a {
+  text-transform: uppercase;
+  color: #252b46;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 8px 15px;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.bookmark .bookmark__ul .bookmark__li .bookmark__a.active,
+.bookmark .bookmark__ul .bookmark__li .bookmark__a:hover {
+  color: #fa5757;
+  text-decoration: none;
+}
+
+.bookmark .bookmark__ul li:last-child .bookmark__a {
+  border: 3px solid #fa5757;
+  background-color: #fa5757;
+  color: white;
+}
+
+.bookmark .bookmark__ul .bookmark__li:last-child .bookmark__a.active,
+.bookmark .bookmark__ul .bookmark__li:last-child .bookmark__a:hover {
+  background-color: white;
+}
+
+.bookmark .bookmark__input {
+  display: none;
+}
+
+.bookmark .bookmark__label img {
+  cursor: pointer;
+  display: none;
+}
+
+.simple__row {
+  margin-bottom: 70px;
+}
+
+.simple__row .simple__img {
+  position: fixed;
+  z-index: 12;
+  top: 0;
+  display: none;
+  width: 50%;
+}
+
+.simple__row .simple__text {
   padding-top: 50px;
   margin-bottom: 50px;
 }
 
-.simple .manager h1 {
+.simple__row .simple__text .simple__h1,
+.simple__row .simple__text .simple__h2 {
   text-align: center;
   font-weight: 500;
   max-width: 500px;
@@ -134,7 +122,7 @@ nav .navbar-toggler-icon:focus {
   padding-right: 30px;
 }
 
-.simple .manager p {
+.simple__row .simple__text .simple__p {
   text-align: center;
   padding-left: 30px;
   padding-right: 30px;
@@ -143,7 +131,7 @@ nav .navbar-toggler-icon:focus {
   text-align: left;
 }
 
-.simple .manager .buttons {
+.simple__row .simple__text .simple__buttons {
   display: flex;
   padding-left: 30px;
   padding-right: 30px;
@@ -151,24 +139,24 @@ nav .navbar-toggler-icon:focus {
   max-width: 500px;
 }
 
-.simple .manager .buttons .firefox {
+.simple__row .simple__text .simple__buttons .simple__firefox {
   border: 2px solid white;
   box-shadow: 0 4px 2px -2px #9194a1;
   margin: 10px;
   white-space: nowrap;
 }
 
-.simple .manager .buttons .firefox:hover {
+.simple__row .simple__text .simple__buttons .simple__firefox:hover {
   border: 2px solid #252b46;
 }
 
-.simple .manager .buttons .chrome:hover {
+.simple__row .simple__text .simple__buttons .simple__chrome:hover {
   border: 2px solid #5355df;
   background-color: white;
   color: #5355df;
 }
 
-.simple .manager .buttons .chrome {
+.simple__row .simple__text .simple__buttons .simple__chrome {
   white-space: nowrap;
   background-color: #5355df;
   border: 2px solid #5355df;
@@ -176,34 +164,45 @@ nav .navbar-toggler-icon:focus {
   margin: 10px;
 }
 
-.simple .manager .buttons button {
+.simple__row .simple__text .simple__buttons button {
   background-color: white;
   border-style: none;
   border-radius: 7px;
 }
 
-.simple .position {
+.simple__row .simple__position--center {
+  display: flex;
+  justify-content: center;
+}
+
+.simple__row .simple__position {
   min-height: 350px;
   position: relative;
 }
 
-.simple .position a {
+.simple__row .simple__position a {
   position: absolute;
   z-index: 9;
   max-width: 80%;
 }
 
-.simple .position a svg {
+.simple__row .simple__position a .simple__svg--color {
   max-width: 100%;
   height: auto;
   display: inline-block;
 }
 
-.simple .position a svg g g path {
+.simple__row .simple__position a .simple__svg {
+  max-width: 100%;
+  height: auto;
+  display: inline-block;
+}
+
+.simple__row .simple__position a .simple__svg g g path {
   fill: #5355df;
 }
 
-.simple .position .oval {
+.simple__row .simple__position .simple__oval {
   position: absolute;
   z-index: 8;
   top: 150px;
@@ -216,91 +215,7 @@ nav .navbar-toggler-icon:focus {
   border-radius: 250px 0 0 250px;
 }
 
-.features {
-  margin-top: 20px;
-  margin-bottom: 50px;
-}
-
-.features h2 {
-  text-align: center;
-  font-weight: 500;
-}
-
-.features p {
-  max-width: 480px;
-  text-align: center;
-  margin: auto;
-  font-weight: 400;
-}
-
-.features .buttons {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-top: 50px;
-}
-
-.features .buttons div {
-  border-bottom: 1px solid #9194a1;
-}
-
-.features .buttons button {
-  background-color: white;
-  border-style: none;
-  border-radius: 1px;
-  margin: 0 20px;
-  white-space: nowrap;
-  height: 40px;
-}
-
-.features .buttons button:hover {
-  color: #fa5757;
-}
-
-.features .buttons div:first-child button {
-  border-bottom: 3px solid #fa5757;
-}
-
-.bookmark-in {
-  margin-bottom: 70px;
-}
-
-.bookmark-in .oneclick .bookmark {
-  padding: 50px 15px 0;
-}
-
-.bookmark-in .oneclick .bookmark P {
-  max-width: 430px;
-  font-weight: 400;
-}
-
-.bookmark-in .oneclick .bookmark .more {
-  background-color: #5355df;
-  color: white;
-  border-radius: 7px;
-  border: none;
-}
-
-.bookmark-in .oneclick .position2 {
-  min-height: 350px;
-  position: relative;
-  display: flex;
-  justify-content: center;
-}
-
-.bookmark-in .oneclick .position2 a {
-  position: absolute;
-  z-index: 9;
-  max-width: 80%;
-}
-
-.bookmark-in .oneclick .position2 a svg {
-  max-width: 100%;
-  height: auto;
-  display: inline-block;
-}
-
-.bookmark-in .oneclick .position2 .oval2 {
+.simple__row .simple__position .simple__oval--side {
   position: absolute;
   z-index: 8;
   top: 150px;
@@ -313,16 +228,54 @@ nav .navbar-toggler-icon:focus {
   border-radius: 0 250px 250px 0;
 }
 
-.download h1 {
+.features {
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+.features .features__h1 {
   text-align: center;
   font-weight: 500;
 }
 
-.download p {
-  max-width: 500px;
-  margin: auto;
+.features .features__h2 {
   text-align: center;
+  font-weight: 500;
+}
+
+.features .features__p {
+  max-width: 480px;
+  text-align: center;
+  margin: auto;
   font-weight: 400;
+}
+
+.features .features__buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 50px;
+}
+
+.features .features__buttons .features__button {
+  border-bottom: 1px solid #9194a1;
+}
+
+.features .features__buttons .features__btn {
+  background-color: white;
+  border-style: none;
+  border-radius: 1px;
+  margin: 0 20px;
+  white-space: nowrap;
+  height: 40px;
+}
+
+.features .features__buttons button:hover {
+  color: #fa5757;
+}
+
+.features .features__buttons div:first-child button {
+  border-bottom: 3px solid #fa5757;
 }
 
 .browsers {
@@ -331,15 +284,15 @@ nav .navbar-toggler-icon:focus {
   justify-content: center;
 }
 
-.browsers div:nth-child(2) {
+.browsers .browsers__div:nth-child(2) {
   margin-top: 50px;
 }
 
-.browsers div:nth-child(3) {
+.browsers .browsers__div:nth-child(3) {
   margin-top: 100px;
 }
 
-.browsers div {
+.browsers .browsers__div {
   padding-top: 10px;
   max-width: 200px;
   overflow: hidden;
@@ -351,24 +304,24 @@ nav .navbar-toggler-icon:focus {
   height: 250px;
 }
 
-.browsers div img {
+.browsers .browsers__div .browsers__img {
   display: block;
   margin: auto;
 }
 
-.browsers div h5 {
+.browsers .browsers__div .browsers__h5 {
   margin-top: 10px;
   text-align: center;
   font-weight: 400;
 }
 
-.browsers div p {
+.browsers .browsers__div .browsers__p {
   font-size: 14px;
   text-align: center;
   font-weight: 400;
 }
 
-.browsers div button {
+.browsers .browsers__div .browsers__btn {
   margin-top: 10px;
   margin-bottom: 10px;
   background-color: #5355df;
@@ -378,34 +331,27 @@ nav .navbar-toggler-icon:focus {
   max-height: 29px;
 }
 
-.browsers div button:hover {
+.browsers .browsers__div .browsers__btn:hover {
   color: #5355df;
   background-color: white;
   border: 2px solid #5355df;
   white-space: nowrap;
 }
 
-.faq {
+.browsers .browsers__div .browsers__dots {
+  display: block;
+  margin: auto;
+}
+
+.accordion {
   margin-top: 50px;
 }
 
-.faq h1 {
-  text-align: center;
-  font-weight: 500;
-}
-
-.faq p {
-  text-align: center;
-  max-width: 500px;
-  margin: auto;
-  font-weight: 400;
-}
-
-.faq .more-accordion {
+.accordion .accordion__more {
   text-align: center;
 }
 
-.faq .more-accordion .more {
+.accordion .accordion__more .accordion__more-btn {
   background-color: #5355df;
   color: white;
   border-radius: 7px;
@@ -413,22 +359,22 @@ nav .navbar-toggler-icon:focus {
   margin: auto;
 }
 
-.faq .accordion {
+.accordion .accordion__div {
   width: 90%;
   max-width: 600px;
   margin: 2rem auto;
 }
 
-.faq .accordion .accordion-item.active svg {
+.accordion .accordion__div .accordion__item.active svg {
   transform: rotate(180deg);
   cursor: pointer;
 }
 
-.faq .accordion .accordion-item.active svg path {
+.accordion .accordion__div .accordion__item.active svg path {
   stroke: #fa5757;
 }
 
-.faq .accordion .accordion-item {
+.accordion .accordion__div .accordion__item {
   background-color: #fff;
   color: #111;
   margin: 1rem 0;
@@ -436,7 +382,7 @@ nav .navbar-toggler-icon:focus {
   position: relative;
 }
 
-.faq .accordion .accordion-item .accordion-item-header {
+.accordion .accordion__div .accordion__item .accordion__item-header {
   padding: 0.5rem 3rem 0.5rem 1rem;
   min-height: 3.5rem;
   line-height: 1.25rem;
@@ -447,24 +393,24 @@ nav .navbar-toggler-icon:focus {
   box-shadow: 0px 2px 2px #9194a1, 0px -2px 2px #9194a1;
 }
 
-.faq .accordion .accordion-item .accordion-item-header:hover {
+.accordion .accordion__div .accordion__item .accordion__item-header:hover {
   color: #fa5757;
 }
 
-.faq .accordion .accordion-item svg {
+.accordion .accordion__div .accordion__item svg {
   position: absolute;
   right: 1rem;
   top: 26px;
   cursor: pointer;
 }
 
-.faq .accordion .accordion-item .accordion-item-body {
+.accordion .accordion__div .accordion__item .accordion__item-body {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.2s ease-out;
 }
 
-.faq .accordion .accordion-item .accordion-item-body .accordion-item-body-content {
+.accordion .accordion__div .accordion__item .accordion__item-body .accordion__item-body-content {
   padding: 1rem;
   line-height: 1.5rem;
   border-top: 1px solid;
@@ -478,17 +424,17 @@ nav .navbar-toggler-icon:focus {
   color: white;
 }
 
-.already .join {
+.already .already__join {
   text-align: center;
 }
 
-.already .join p {
+.already .already__join p {
   display: inline-block;
   font-weight: 400;
   color: white;
 }
 
-.already .join h1 {
+.already .already__join h1 {
   max-width: 500px;
   margin: auto;
   font-weight: 500;
@@ -496,36 +442,36 @@ nav .navbar-toggler-icon:focus {
   color: white;
 }
 
-.already .join div {
+.already .already__join div {
   text-transform: uppercase;
 }
 
-.already .form {
+.already .already__form {
   display: flex;
   justify-content: center;
   margin: 30px;
 }
 
-.already .form form.submit-error .submit input {
+.already .already__form form.submit-error .already__submit input {
   color: #fa5757;
   border: 2px solid #fa5757;
   background-color: #fff;
 }
 
-.already .form form {
+.already .already__form form {
   display: flex;
   justify-content: center;
   max-width: 600px;
   width: 100%;
 }
 
-.already .form form .submit {
+.already .already__form form .already__submit {
   width: 35%;
   display: inline-block;
   vertical-align: top;
 }
 
-.already .form form .submit input {
+.already .already__form form .already__submit input {
   width: 100%;
   margin: 0 5px;
   border-radius: 7px;
@@ -535,35 +481,35 @@ nav .navbar-toggler-icon:focus {
   height: 33px;
 }
 
-.already .form form .email.error img {
+.already .already__form form .already__email.error img {
   visibility: visible;
 }
 
-.already .form form .email.error input {
+.already .already__form form .already__email.error input {
   border: 2px solid #fa5757;
 }
 
-.already .form form .email {
+.already .already__form form .already__email {
   width: 55%;
   display: inline-block;
   position: relative;
   height: 50px;
 }
 
-.already .form form .email input {
+.already .already__form form .already__email input {
   display: block;
   width: 100%;
 }
 
-.already .form form .email input::placeholder {
+.already .already__form form .already__email input::placeholder {
   padding-left: 10px;
 }
 
-.already .form form .email .error {
+.already .already__form form .already__email .error {
   visibility: visible;
 }
 
-.already .form form .email small {
+.already .already__form form .already__email small {
   padding-left: 10px;
   position: absolute;
   bottom: 0;
@@ -574,7 +520,7 @@ nav .navbar-toggler-icon:focus {
   width: 100%;
 }
 
-.already .form form .email img {
+.already .already__form form .already__email .already__img {
   position: absolute;
   top: 5px;
   right: 10px;
@@ -591,121 +537,165 @@ footer {
   color: white;
 }
 
-footer .brand-title {
+footer .already__brand-title {
   cursor: pointer;
 }
 
-footer .brand-title svg {
+footer .already__brand-title svg {
   margin: 0 5px;
 }
 
-footer .brand-title svg:hover path {
+footer .already__brand-title svg:hover path {
   fill: #fa5757;
 }
 
-footer .footer {
+footer .already__footer {
   display: flex;
   min-height: 80px;
 }
 
-footer .footer .brand-title {
+footer .already__footer .already__brand-title {
   margin-right: 10px;
   display: flex;
   align-items: center;
 }
 
-footer .footer .brand-title svg g path {
+footer .already__footer .already__brand-title svg g path {
   fill: white;
 }
 
-footer .footer .navbar-links {
+footer .already__footer .already__navbar-links {
   height: 100%;
   min-height: 80px;
   display: flex;
   align-items: center;
 }
 
-footer .footer .navbar-links ul {
+footer .already__footer .already__navbar-links .already__ul {
   display: flex;
   margin: 0;
   padding: 0;
 }
 
-footer .footer .navbar-links ul li {
+footer .already__footer .already__navbar-links .already__ul .already__li {
   list-style: none;
   text-transform: uppercase;
 }
 
-footer .footer .navbar-links ul li a {
+footer .already__footer .already__navbar-links .already__ul .already__li .already__a {
   display: block;
   text-decoration: none;
   color: white;
   padding: 1rem;
 }
 
-footer .footer .navbar-links ul li a:hover {
+footer .already__footer .already__navbar-links .already__ul .already__li .already__a:hover {
   color: #fa5757;
+}
+
+@media (max-width: 1000px) {
+  .bookmark {
+    padding: 0 40px 0 50px;
+  }
 }
 
 @media (max-width: 990px) {
   nav img {
     width: 100%;
   }
-  .simple img {
+  .simple__row .simple__img {
     width: 100%;
   }
-  .simple .position {
+  .simple__row .simple__position {
     display: flex;
     justify-content: center;
   }
-  .simple .position a {
+  .simple__row .simple__position a {
     max-width: 60%;
   }
-  .simple .position .oval {
-    position: absolute;
-    z-index: 8;
-    top: 150px;
+  .simple__row .simple__position .simple__oval {
     left: 35%;
     width: 50%;
     height: 25vw;
-    background: #5355df;
-    display: inline-block;
-    line-height: 250px;
-    border-radius: 250px 0 0 250px;
   }
-  .simple .manager h1,
-  .simple .manager .buttons,
-  .simple .manager p {
-    margin: 10px auto;
-  }
-  .bookmark-in .oneclick .position2 a {
-    max-width: 60%;
-  }
-  .bookmark-in .oneclick .position2 .oval2 {
-    position: absolute;
-    z-index: 8;
-    top: 150px;
+  .simple__row .simple__position .simple__oval--side {
     right: 35%;
     width: 55%;
     height: 25vw;
-    background: #5355df;
-    display: inline-block;
-    line-height: 250px;
-    border-radius: 0 250px 250px 0;
   }
-  .bookmark-in .bookmark h2,
-  .bookmark-in .bookmark .buttons-bookmark,
-  .bookmark-in .bookmark p {
+  .simple__row .simple__text .simple__h1,
+  .simple__row .simple__text .simple__h2,
+  .simple__row .simple__text .simple__buttons,
+  .simple__row .simple__text .simple__p {
+    margin: 10px auto;
+  }
+  .bookmark h2,
+  .bookmark .buttons-bookmark,
+  .bookmark p {
     margin: auto;
     margin-top: 10px;
   }
-  .bookmark-in .bookmark h2 {
+  .bookmark h2 {
     text-align: center;
   }
-  .bookmark-in .bookmark .buttons-bookmark {
+  .bookmark .buttons-bookmark {
     display: flex;
     justify-content: center;
     margin-top: 10px;
+  }
+}
+
+@media (max-width: 920px) {
+  .bookmark.active {
+    background-color: #252b46;
+  }
+  .bookmark.active svg g path {
+    fill: white;
+  }
+  .bookmark.active svg g g circle {
+    fill: white;
+  }
+  .bookmark.active svg g g path {
+    fill: #252b46;
+  }
+  .bookmark.active .bookmark__img {
+    content: url(images/icon-close.svg);
+  }
+  .bookmark .bookmark__ul {
+    position: fixed;
+    top: 80px;
+    left: -100%;
+    background: #252b46;
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+    display: block;
+    transition: all 0.3s ease;
+    z-index: 20;
+  }
+  .bookmark .bookmark__ul .bookmark__li {
+    width: 90%;
+    border-top: 1px solid #9194a1;
+    margin: 0 auto;
+  }
+  .bookmark .bookmark__ul .bookmark__li .bookmark__a {
+    color: white;
+    width: 100%;
+    margin-left: -100%;
+    display: block;
+    font-size: 20px;
+    transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    margin: 0 auto;
+  }
+  .bookmark .bookmark__ul .bookmark__li:last-child .bookmark__a {
+    border: 3px solid white;
+    background-color: #252b46;
+  }
+  .bookmark #click:checked ~ .bookmark__ul {
+    left: 0;
+  }
+  .bookmark .bookmark__label img {
+    display: block;
   }
 }
 
@@ -714,23 +704,23 @@ footer .footer .navbar-links ul li a:hover {
     justify-content: center;
     flex-direction: column;
   }
-  footer .brand-title {
+  footer .already__brand-title {
     margin: 20px 0;
   }
-  footer .footer {
+  footer .already__footer {
     flex-direction: column;
   }
-  footer .footer .navbar-links {
+  footer .already__footer .already__navbar-links {
     display: flex;
   }
-  footer .footer .navbar-links ul {
+  footer .already__footer .already__navbar-links .already__ul {
     width: 100%;
     flex-direction: column;
   }
-  footer .footer .navbar-links ul li {
+  footer .already__footer .already__navbar-links .already__ul .already__li {
     text-align: center;
   }
-  footer .footer .navbar-links ul li a {
+  footer .already__footer .already__navbar-links .already__ul .already__li .already__a {
     padding: 0.5rem 1rem;
   }
 }
@@ -740,7 +730,7 @@ footer .footer .navbar-links ul li a:hover {
     display: flex;
     flex-wrap: wrap;
   }
-  .browsers div:nth-child(3) {
+  .browsers .browsers__div:nth-child(3) {
     margin-top: 10px;
   }
 }
@@ -750,57 +740,57 @@ footer .footer .navbar-links ul li a:hover {
     display: list-item;
     border-top: 1px solid #9194a1;
   }
-  .simple .manager h1,
-  .simple .manager p {
+  .simple__row .simple__text .simple__h1,
+  .simple__row .simple__text .simple__p {
     text-align: center;
   }
-  .simple .manager .buttons {
-    padding-left: 10px;
-    padding-right: 10px;
+  .simple__row .simple__text .simple__buttons {
+    display: flex;
+    justify-content: center;
   }
-  .browsers div {
+  .browsers .browsers__div {
     margin-top: 20px !important;
   }
-  .simple .position .oval {
+  .simple__row .simple__position .simple__oval {
     top: 100px;
   }
-  .bookmark-in .oneclick .position2 .oval2 {
+  .simple__row .simple__position .simple__oval--side {
     top: 100px;
   }
 }
 
 @media screen and (max-width: 375px) {
-  .simple {
+  .simple__row {
     display: flex;
     flex-direction: column-reverse;
   }
-  .features .buttons {
+  .features .features__buttons {
     display: flex;
     flex-direction: column;
   }
-  .features .buttons div {
+  .features .features__buttons .features__button {
     display: flex;
     justify-content: center;
   }
-  .features .buttons div:first-child {
+  .features .features__buttons .features__button:first-child {
     border-top: 1px solid #9194a1;
   }
   .browsers {
     flex-direction: column;
   }
-  .browsers div {
+  .browsers .browsers__div {
     margin: auto;
   }
-  .browsers div:nth-child(2) {
+  .browsers .browsers__div:nth-child(2) {
     margin-top: 10px;
   }
-  .browsers div:nth-child(3) {
+  .browsers .browsers__div:nth-child(3) {
     margin-top: 10px;
   }
-  .already .form {
+  .already .already__form {
     flex-direction: column;
   }
-  .already .form input {
+  .already .already__form input {
     width: 80%;
   }
 }
